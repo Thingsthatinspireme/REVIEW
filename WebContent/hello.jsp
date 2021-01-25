@@ -1,21 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%
-  	String cnt_ = request.getParameter("cnt");
-    
-    int cnt = 100;
-    if(cnt_ != null && !cnt_.equals(""))
-    	cnt = Integer.parseInt(cnt_);
-    %>
+	pageEncoding="UTF-8"%>
+<%
+int num = 0;
+String num_ = request.getParameter("n"); 
+if(num_ != null && !num_.equals(""))
+	num = Integer.parseInt(num_);
+
+String result;
+
+if(num % 2 != 0){
+	result = "홀수";
+}else{
+	result = "짝수";
+} 
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>hello</title>
 </head>
 <body>
-	<%for(int i=0; i<cnt; i++){ %>
-	Hello! Servlet!<br/>
-	<%} //반복문의 중괄호 끝도 감싸주어야 한다 %>	
+	<%=result%>	입니다.
 </body>
 </html>
