@@ -1,6 +1,8 @@
 package com.nl.web;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,6 +32,14 @@ public class Hello extends HttpServlet{
 		
 		
 		request.setAttribute("result", result); //request에 result를 담아주기
+		
+		String[] names = {"Java", "Servlet"};
+		request.setAttribute("names", names);
+		
+		Map<String, Object> notice = new HashMap<String, Object> ();
+		notice.put("id", 1);
+		notice.put("title", "EL표기법");
+		request.setAttribute("notice", notice);
 		
 		//jsp와 자바 코드를 연결 해줄 수 있는 저장소가 필요하다.
 		//redirect : 현재 작업과 상관없이 새로운 요청
