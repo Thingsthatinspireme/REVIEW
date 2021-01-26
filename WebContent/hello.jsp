@@ -6,8 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>hello</title>
+<%pageContext.setAttribute("result", "hello!");%>
 </head>
 <body>
-	<%=request.getAttribute("result")%>	입니다.
+	<%=request.getAttribute("result")%>	입니다.<br/>
+	${requestScope.result}입니다.<br/>
+	${names[0]}<br/>
+	${notice.title}<br/>
+	${result}<br/>
+	${param.n}<br/>
+	${header.accept}<br/>
 </body>
 </html>
